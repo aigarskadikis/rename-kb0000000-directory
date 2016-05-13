@@ -18,7 +18,7 @@ goto exit
 )
 
 for /f "tokens=*" %%i in ('dir /b "%~dp0%d%"') do (
-echo %%i | sed "s/^.*(\|)//g" | grep "^.........$" > nul 2>&1
+echo %%i | sed "s/^.*(\|)//g" | grep "^KB.......$" > nul 2>&1
 if !errorlevel!==0 (
 for /f "tokens=*" %%a in ('echo %%i ^|
 sed "s/^.*(\|)//g" ^|
@@ -28,11 +28,11 @@ ren "%~dp0%d%\%%i" "%%a"
 )
 )
 
-echo %%i | sed "s/^.*(\|)//g" | grep "^..........$" > nul 2>&1
+echo %%i | sed "s/^.*(\|)//g" | grep "^KB........$" > nul 2>&1
 if !errorlevel!==0 (
 for /f "tokens=*" %%a in ('echo %%i ^|
 sed "s/^.*(\|)//g" ^|
-grep "^..........$"') do (
+grep "^KB........$"') do (
 echo %~dp0%d%\%%i
 ren "%~dp0%d%\%%i" "%%a"
 )
