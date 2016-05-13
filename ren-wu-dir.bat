@@ -5,7 +5,7 @@ set path=%path%;%~dp0
 if "%1"=="" (
 echo Enter directory name now where the updates are stored:
 set /p d=
-)
+) set d=%1
 
 if "%d%"=="" (
 echo you have to enter direcotry name to start!
