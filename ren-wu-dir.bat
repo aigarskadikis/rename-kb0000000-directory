@@ -9,12 +9,14 @@ set /p d=
 
 if "%d%"=="" (
 echo you have to enter direcotry name to start!
-goto exit
+pause
+break
 )
 
 if not exist "%~dp0%d%" (
 echo the direcotry name %d% do not exist!
-goto exit
+pause
+break
 )
 
 for /f "tokens=*" %%i in ('dir /b "%~dp0%d%"') do (
@@ -40,10 +42,4 @@ ren "%~dp0%d%\%%i" "%%a"
 
 )
 
-
-:exit
-
 endlocal
-
-pause
-
